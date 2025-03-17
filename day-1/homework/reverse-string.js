@@ -19,11 +19,23 @@
  *  d. how do you concatenate Strings? What operator do we use?
  */
 
+/* 
+
+I: one string 
+O: returns a string of reversed letters
+C: 
+E: 
+
+*/
+
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
     
-    
-    
+    // declare variable to reverse letters
+    var reversedInput = input.split('').reverse().join('');
+
+    // return new string
+    return reversedInput;
     
     // YOUR CODE GOES ABOVE HERE //
 }

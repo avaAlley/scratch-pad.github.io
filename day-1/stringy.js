@@ -370,7 +370,6 @@ function sortDescending(stringOne, stringTwo) {
     // compare strings first letter and return locale value
     return stringOne.localeCompare(stringTwo);
 
-
     // YOUR CODE ABOVE HERE //
 }
 

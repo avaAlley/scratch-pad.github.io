@@ -29,7 +29,7 @@ function fizzBuzz() {
     // while variable is < 100 loop
     // while (willFizzBuzz <= 100){
         
-    }
+    // }
     // conditional statement for multiple of 3 AND 5
 
     // conditional for multiples of 3

@@ -27,21 +27,29 @@ function fizzBuzz() {
     // declare variable to 1 to increment
     var willFizzBuzz = 1
     // while variable is < 100 loop
-    // while (willFizzBuzz <= 100){
+    while (willFizzBuzz <= 100){
         
-    // }
     // conditional statement for multiple of 3 AND 5
-
+      if(willFizzBuzz % 3 === 0 && willFizzBuzz % 5 === 0){
+        console.log('FizzBuzz');
+        willFizzBuzz++
     // conditional for multiples of 3
-
+      } else if (willFizzBuzz % 3 === 0){
+        console.log('Fizz');
+        willFizzBuzz++
     // conditional for multiples of 5
-
+      } else if (willFizzBuzz % 5 === 0){
+        console.log('Buzz');
+        willFizzBuzz++
     // else print number
-
+      } else {
+        console.log(willFizzBuzz)
+        willFizzBuzz++
+      }
     // YOUR CODE GOES ABOVE HERE //
+
+    }
 }
-
-
 
 
 

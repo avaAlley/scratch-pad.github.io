@@ -11,13 +11,28 @@
  * return a Function that tests whether a given value is greater than the 
  * base.
  */
+
+/*
+
+I: string or number input, base
+O: function to test value against base
+C: 
+E: 
+
+*/
+
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
+    // return a function to test against base
+    return function(value){
+        return value > base;
+    }
    
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 /** 
  * Given an input base to test against, which could be a String or Number, 
@@ -25,10 +40,24 @@ function createGreaterThanFilter(base) {
  * base. (test means return true or false)
  * 
  */
+
+/*
+
+I: string or number
+O: function that tests if value is less than base
+C: 
+E: 
+
+*/
+
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-  
+
+    // create function that takes in a value to return
+    return function(value){
+        // return value < base boolean value
+        return value < base;
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -41,11 +70,32 @@ function createLessThanFilter(base) {
  * 
  * This function needs to be case insensitive.
  */
+
+/*
+
+I: parameter that is a single character
+O: function that tests if string starts with character given
+C: must be case insensitive
+E: 
+
+*/
+
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
+
+    // convert startsWith letter to lower case and give new variable
+    var startLetter = startsWith.toLowerCase();
     
-    
-    
+    // return a function to test with a string
+    return function(str){
+
+        // convert first letter of str to lower case
+        var strFirstLetter = str[0].toLowerCase();
+
+        // return finding of if first letter === startsWith new variable
+        return strFirstLetter === startLetter;
+
+    };
     
     // YOUR CODE ABOVE HERE //
 }
@@ -57,11 +107,32 @@ function createStartsWithFilter(startsWith) {
  * 
  * This function needs to be case insensitive.
  */
+
+/*
+
+I: a string of a single character
+O: function that tests last letter of a string
+C: case insensitive
+E: 
+
+*/
+
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
+  
+    // convert startsWith letter to lower case and give new variable
+    var endLetter = endsWith.toLowerCase();
     
-    
-    
+    // return a function to test with a string
+    return function(str){
+
+        // convert first letter of str to lower case
+        var strEndLetter = str[str.length - 1].toLowerCase();
+
+        // return finding of if first letter === startsWith new variable
+        return strEndLetter === endLetter;
+
+    };  
     
     // YOUR CODE ABOVE HERE //
 }
@@ -73,16 +144,40 @@ function createEndsWithFilter(endsWith) {
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
+
+/*
+
+I: array of strings and a modify function
+O: array of strings modified
+C: 
+E: 
+
+*/
+
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    // create holder array
+    var modifiedStringsArray = [];
+
+    // loop over strings array
+    for(var i = 0, i < strings.length; i++){
+
+        // pass string through modify function
+        modifiedStringsArray.push(modify(strings[i]));
+
+    }
+    // return new array
+    return modifiedStringsArray;
     
     // YOUR CODE ABOVE HERE //
 }
 
+var upperCase = modifyStrings(['a', 'b', 'c'], function(str){ return str.toUpperCase() });
+// => ['A', 'B', 'C']
 
+var addExclamation = modifyStrings(['a', 'b'], function(str){ return str + "!" });
+// => ['a!', 'b!']
 
 
 /** 
@@ -103,7 +198,11 @@ function allStringsPass(strings, test) {
     // YOUR CODE ABOVE HERE //
 }
 
+var beginsWithA = allStringsPass(['alex', 'aaron'], function(str){ return str[0] === 'a'});
+// => true (begins all strings begin with 'a')
 
+var longerThan4 = allStringsPass(['alex', 'aaron'], function(str) { return str.length > 4});
+// => false (not all strings have a length greater than 4)
 
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

@@ -161,7 +161,7 @@ function modifyStrings(strings, modify) {
     var modifiedStringsArray = [];
 
     // loop over strings array
-    for(var i = 0, i < strings.length; i++){
+    for(var i = 0; i < strings.length; i++){
 
         // pass string through modify function
         modifiedStringsArray.push(modify(strings[i]));
@@ -189,14 +189,49 @@ var addExclamation = modifyStrings(['a', 'b'], function(str){ return str + "!" }
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
+
+/*
+
+I: array of strings and a function
+O: boolean value if ALL strings pass _some_ test
+C: 
+E: 
+
+*/
+
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+
+    // create holder array for false findings
+    var falsyArray = [];
+
+    // create holder array for true findings
+
+    var truthyArray = [];
     
-    
-    
+    // loop through string array
+    for (var i = 0; i < strings.length; i++){
+        // for each value, see if test !== true
+        if (test(strings[i]) !== true){
+            // if false, push to falsy array
+            falsyArray.push(strings[i]);
+        // return true if each string passes test
+        } else {
+            // otherwise, push to truthy array
+            truthyArray.push(strings[i]);
+        }
+    }
+    // if falsyArray contains anything, return false
+
+    if (falsyArray.length === 0){
+        return true;
+    } else {
+        return false;
+    }
     
     // YOUR CODE ABOVE HERE //
 }
+
 
 var beginsWithA = allStringsPass(['alex', 'aaron'], function(str){ return str[0] === 'a'});
 // => true (begins all strings begin with 'a')

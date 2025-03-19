@@ -24,8 +24,8 @@
 
 /*
 
-I: 
-O: 
+I: two integers
+O: an array containing all integers between two paramters inclusively
 C: 
 E: 
 
@@ -34,9 +34,32 @@ E:
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
+    // create holder array for integers
+    var rangeArr = [];
+
+    // checks if start is less than end
+    if (start < end){
+
     
+
+        // loop through numbers
+        
+
+        // push to holder array
+
+
+    // if start is greater than end
+    } else {
+
     
+
+        // loop through numbers in reverse
+
+
+        // push to holder array
+
     
+    }
     // YOUR CODE GOES ABOVE HERE //
 }
 

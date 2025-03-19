@@ -38,28 +38,31 @@ function range(start, end) {
     var rangeArr = [];
 
     // checks if start is less than end
-    if (start < end){
-
-    
+    if (start <= end){
 
         // loop through numbers
-        
-
-        // push to holder array
-
-
+        while (start <= end){
+          
+          // push to holder array
+          rangeArr.push(start);
+          
+          // increment start
+          start++
+        }
     // if start is greater than end
-    } else {
-
-    
+    } else if (start >= end){
 
         // loop through numbers in reverse
-
-
-        // push to holder array
-
-    
+        while (start >= end){
+          
+          // push to holder array
+          rangeArr.push(start);
+          
+          // increment start
+          start--
+        }
     }
+  return rangeArr;
     // YOUR CODE GOES ABOVE HERE //
 }
 
